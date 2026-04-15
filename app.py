@@ -18,7 +18,7 @@ col1, col2 = st.columns(2)
 
 # -------- LEFT: DRAW --------
 with col1:
-    st.subheader("✏️ Draw Digit")
+    st.subheader(" Draw Digit")
     canvas = st_canvas(
         fill_color='black',
         stroke_width=20,
@@ -31,7 +31,7 @@ with col1:
 
 # -------- RIGHT: UPLOAD --------
 with col2:
-    st.subheader("📤 Upload Image")
+    st.subheader(" Upload Image")
     uploaded_file = st.file_uploader("Choose an image", type=["png", "jpg", "jpeg"])
 
 # -------- PREPROCESS FUNCTION --------
@@ -48,7 +48,7 @@ def preprocessing(img):
     return img_array, processed_display
 
 # -------- PREDICT BUTTON --------
-if st.button("🚀 Predict"):
+if st.button(" Predict"):
 
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
@@ -72,7 +72,7 @@ if st.button("🚀 Predict"):
 
     # preprocessing image
     st.subheader("⚙️ Preprocessed Image (28x28)")
-    st.image(display_img, width=150, clamp=True)
+    #st.image(display_img, width=150, clamp=True)
 
     # Prediction
     prediction = model.predict(processed)
